@@ -1,5 +1,5 @@
-﻿TITRE DU JEU
+﻿OLOGame
 
-DESCRIPTION
+Jeu créé pendant la jam du monde 28-30 juin 2013
 
-MEMBRES
+Membres : Thibault Eynard, Thomas Fontaine, Adrien Carta, Gregoire Carabeuf, Benjamin Winckell
