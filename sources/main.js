@@ -135,7 +135,7 @@ function launchPulse(buffer)
 		{ 
 			renderPulse : { "color" : "rgb(255,255,0)", "buffer" : buffer, "compteur" : 0 },
 			position2d  : { "x" : 200, "y" : 200 },
-			size2d      : { "radius" : 5 }
+			size2d      : { "radius" : 1 }
 		}
 	);
 }

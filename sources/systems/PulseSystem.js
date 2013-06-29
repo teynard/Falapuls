@@ -11,8 +11,9 @@ var RenderPulse =
 		renderPulse.compteur++;
 
 		if (renderPulse.compteur/60 >= buffer.duration)
-			Puppets.Entities.removeEntity(this["0"]);
-		console.log(this);
+		{
+			Puppets.Entities.removeEntity(renderPulse.entity);
+		}
 		
 		context.strokeStyle = renderPulse.color;
 		context.lineWidth = 3; 
