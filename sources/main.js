@@ -17,9 +17,10 @@ window.requestAnimFrame = (function(){
 function init() 
 {
 	canvasInstanciation();
+	audioInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-	new Puppets(["RenderShape", "Kinematic"]);
+	new Puppets(["RenderShape", "Kinematic", "RenderPulse"]);
 
 	//Instanciate background entity
 	Puppets.Entities.createEntity(
@@ -59,9 +60,67 @@ function canvasInstanciation()
 	canvas.height  = 768;
 }
 
+		
+/************************************************************************************
+ * update function that iterates 60 times a sec
+ * renders the canvas and run the systems
+ ***********************************************************************************/
 function gameloop()
 {
 	Puppets.run();
 	requestAnimFrame(gameloop);
 }
 
+		
+/************************************************************************************
+ * instanciate audio buffer
+ ***********************************************************************************/
+function audioInstanciation()
+{
+	try 
+	{
+		// Fix up for prefixing
+		window.AudioContext = window.AudioContext||window.webkitAudioContext;
+		window.audioContext = new AudioContext();
+	}
+	catch(e) 
+	{
+		alert('Web Audio API is not supported in this browser');
+	}
+
+  	bufferLoader = new BufferLoader(
+    	audioContext,
+    	[
+      		'medias/sounds/accept.mp3',
+      		'medias/sounds/amulet.wav',
+      		'medias/sounds/pumpkin.ogg'
+    	],
+    	finishedLoading
+    );
+
+  	bufferLoader.load();
+}
+
+function finishedLoading(bufferList) {
+	
+	window.audioBufferList = bufferList;
+	console.log(audioBufferList);
+}
+
+function launchPulse(buffer)
+{
+	var source = audioContext.createBufferSource();
+	source.buffer = buffer;
+	source.connect(audioContext.destination);
+	source.start(0);
+
+	Puppets.Entities.createEntity(
+		entitiesModels["pulse"], 
+		{ 
+			renderPulse : { "color" : "blue" },
+			position2d  : { "x" : 100, "y" : 100 },
+			size2d      : { "radius" : 15 },
+			velocity2d  : { "x" : 1, "y" : 1 }
+		}
+	);
+}
