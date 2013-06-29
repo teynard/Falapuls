@@ -19,9 +19,10 @@ function init()
 	canvasInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-	new Puppets(["RenderShape", "Kinematic"]);
+	new Puppets(["RenderShape","RenderStroke", "AttackSystem", "Kinematic"]);
 
 	//Instanciate background entity
+	// background
 	Puppets.Entities.createEntity(
 		entitiesModels["rect"], 
 		{ 
@@ -33,16 +34,72 @@ function init()
 			}
 		}
 	);
-
+	// entitie parent top left
 	Puppets.Entities.createEntity(
-		entitiesModels["ball"],
-		{
-			renderShape : {"color" : "white"},
-			size2d : {'radius' : RADIUSBALL},
-			position2d : {'x' : 400, 'y' : 400},
-			velocity2d : {'x' : 1, 'y' : 0}
+		entitiesModels["rectParent"], 
+		{ 
+			renderShape : {"color" : "purple"},
+			size2d : 
+			{
+				"width"  : canvas.width/2,
+				"height" : canvas.height/2
+			},
+			position2d : {"x" : 0,"y" : 0},
+			childs : {number : 4},
+			positionId : { corner : "top-left"}
 		}
 	);
+	// Puppets.Entities.removeComponent(1,'renderShape');
+	// entitie parent top right
+	Puppets.Entities.createEntity(
+		entitiesModels["rectParent"], 
+		{ 
+			renderShape : {"color" : "blue"},
+			size2d : 
+			{
+				"width"  : canvas.width/2,
+				"height" : canvas.height/2
+			},
+			position2d : {"x" : canvas.width/2,"y" : 0},
+			childs : {number : 4},
+			positionId : { corner : "top-right"}
+		}
+	);
+	// Puppets.Entities.removeComponent(6,'renderShape');
+	// entitie parent bottom right
+	Puppets.Entities.createEntity(
+		entitiesModels["rectParent"], 
+		{ 
+			renderShape : {"color" : "red"},
+			size2d : 
+			{
+				"width"  : canvas.width/2,
+				"height" : canvas.height/2
+			},
+			position2d : {"x" : canvas.width/2,"y" : canvas.height/2},
+			childs : {number : 4},
+			positionId : { corner : "bottom-left" }
+		}
+	);
+	// Puppets.Entities.removeComponent(11,'renderShape');
+	// entitie parent bottom left
+	Puppets.Entities.createEntity(
+		entitiesModels["rectParent"], 
+		{ 
+			renderShape : {"color" : "yellow"},
+			size2d : 
+			{
+				"width"  : canvas.width/2,
+				"height" : canvas.height/2
+			},
+			position2d : {"x" : 0,"y" : canvas.height/2},
+			childs : {number : 4},
+			positionId : { corner : "bottom-right" }
+		}
+	);
+	MapGeneration.method();
+	
+	// Puppets.Entities.removeComponent(16,'renderShape');
 
 	gameloop();
 }

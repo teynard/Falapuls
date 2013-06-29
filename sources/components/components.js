@@ -1,5 +1,11 @@
 var componentsModels =
 {
+	cageArea : "return {restitution : 5}",
+
+	ballCenter : "return {}",
+
+	fromPlayer : "return {player : datas.player};",
+
 	catchForces : "return {force : datas.force || 0, element : datas.element || 'neutre'};",
 
     position2d : "return {x : datas.x || 0, y : datas.y || 0};",
@@ -8,5 +14,16 @@ var componentsModels =
 
     renderShape : "return {color : datas.color || 0, shape : datas.shape || 0};",
 
+    velocity2d : "return {x : datas.x || 0, y : datas.y || 0};",
+
+    childs : "return { number : datas.number || 0 };",
+
+    positionId : " return { corner : datas.corner || console.log('positionId de '+entity)};",
+
+    parent : "return { number : datas.number || null};",
+
+    renderStroke : "return {color : datas.color || 0, shape : datas.shape || 0, weight : datas.weight || 0};",
+
     velocity2d : "return {x : datas.x || 0, y : datas.y || 0};"
+
 }
