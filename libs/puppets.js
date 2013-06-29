@@ -89,7 +89,7 @@ Puppets = function (systemList)
 				else
 					var component = model.components[i];
 
-				var id = Puppets.Components.addComponent(component, constructor[component], enabled);
+				var id = Puppets.Components.addComponent(this.length, component, constructor[component], enabled);
 				entity[component] = id;
 				argument[component] = Puppets.Components.list[component][id];
 			}
@@ -232,7 +232,7 @@ Puppets = function (systemList)
 
 		   return count;
 		},
-		addComponent : function(component, constructor, enabled)
+		addComponent : function(entity, component, constructor, enabled)
 		{
 			if(this.list[component] === null || this.list[component] === undefined)
 			{
@@ -242,9 +242,9 @@ Puppets = function (systemList)
 
 			var id = this.length[component];
 			if(constructor === null || constructor === undefined)
-				this.list[component][id] = Function("datas", componentsModels[component])({});
+				this.list[component][id] = Function("datas", "entity", componentsModels[component])({}, entity);
 			else
-				this.list[component][id] = Function("datas", componentsModels[component])(constructor);
+				this.list[component][id] = Function("datas", "entity", componentsModels[component])(constructor, entity);
 
 			if(enabled !== undefined)
 				this.list[component][id].enabled = enabled;

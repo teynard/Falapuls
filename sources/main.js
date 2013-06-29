@@ -19,7 +19,7 @@ function init()
 	canvasInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-	new Puppets(["RenderShape", "AttackSystem", "Kinematic"]);
+	new Puppets(["RenderShape","RenderStroke", "AttackSystem", "Kinematic"]);
 
 	//Instanciate background entity
 	Puppets.Entities.createEntity(
@@ -42,6 +42,21 @@ function init()
 			position2d : {'x' : 400, 'y' : 400}
 		}
 	);
+
+	Puppets.Entities.createEntity(
+		entitiesModels["cage"],
+		{
+			renderStroke : {"color" : "red", "shape" : "square", "weight" : 10},
+			size2d :
+			{
+				"width"  : canvas.width,
+				"height" : canvas.height
+			},
+			
+		}
+	);
+
+	createPlayer();
 
 	gameloop();
 }
