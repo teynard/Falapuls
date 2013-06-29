@@ -8,5 +8,5 @@ var componentsModels =
 
     velocity2d : "return {x : datas.x || 0, y : datas.y || 0};",
 
-    renderPulse : "return {color : datas.color || 0};"
+    renderPulse : "return {color : datas.color || 0, buffer : datas.buffer, compteur : datas.compteur };"
 }

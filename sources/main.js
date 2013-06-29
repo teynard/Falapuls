@@ -113,14 +113,15 @@ function launchPulse(buffer)
 	source.buffer = buffer;
 	source.connect(audioContext.destination);
 	source.start(0);
+	console.log(buffer);
+
 
 	Puppets.Entities.createEntity(
 		entitiesModels["pulse"], 
 		{ 
-			renderPulse : { "color" : "blue" },
-			position2d  : { "x" : 100, "y" : 100 },
-			size2d      : { "radius" : 15 },
-			velocity2d  : { "x" : 1, "y" : 1 }
+			renderPulse : { "color" : "rgb(255,255,0)", "buffer" : buffer, "compteur" : 0 },
+			position2d  : { "x" : 200, "y" : 200 },
+			size2d      : { "radius" : 5 }
 		}
 	);
 }

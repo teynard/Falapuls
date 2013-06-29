@@ -34,7 +34,7 @@ Puppets = function (systemList)
 				components.push(Puppets.Components.list[component][entity[component]]);
 			}
 			components.push(entity);
-			method.apply(null, components);
+			method.apply(id, components);
 			this.COMPONENTS.length = 0;
 		}
 	}
