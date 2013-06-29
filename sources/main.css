@@ -33,6 +33,7 @@ canvas {
 	display: inline;
 	background-image: url(../medias/images/menu_background.png);
 }
+
 #title {
 	position: absolute;
 	font-size: 0px;
@@ -64,9 +65,43 @@ canvas {
 	text-align:right;
 	display: none;
 }
+#player1Select {
+	position: absolute;
+	width: 512px;
+	height: 384px;
+	margin-left: -512px;
+	margin-top: -384px;
+	background-color: yellow;
+}
+#player2Select {
+	position: absolute;
+	width: 512px;
+	height: 384px;
+	margin-left: 1024px;
+	margin-top: -384px;
+	background-color: green;
+}
+#player3Select {
+	position: absolute;
+	width: 512px;
+	height: 384px;
+	margin-left: -512px;
+	margin-top: 768px;
+	background-color: blue;
+}
+#player4Select {
+	position: absolute;
+	width: 512px;
+	height: 384px;
+	margin-left: 1024px;
+	margin-top: 768px;
+	background-color: purple;
+}
 /*Background*/
 html {
-	background: url(../medias/images/background.png) repeat center center fixed; 
+	background-image: url(../medias/images/background.png) !important;
+	background-repeat:repeat;
+	background-position: bottom right;
 	-webkit-background-size: auto;
 	-moz-background-size: auto;
 	-o-background-size: auto;
