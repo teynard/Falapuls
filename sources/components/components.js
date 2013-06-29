@@ -1,5 +1,9 @@
 var componentsModels =
 {
+	ballCenter : "return {}",
+	
+	fromPlayer : "return {player : datas.player};",
+
 	catchForces : "return {force : datas.force || 0, element : datas.element || 'neutre'};",
 
     position2d : "return {x : datas.x || 0, y : datas.y || 0};",

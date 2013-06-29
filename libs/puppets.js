@@ -22,20 +22,25 @@ Puppets = function (systemList)
 		{
 			var entity = Puppets.Entities.list[id];
 			var components = this.COMPONENTS;
-			for(var i = 0; i < listOfComponents.length; i++)
+			if(entity !== null && entity !== undefined)
 			{
-				var component = listOfComponents[i];
-				if(entity[component] === null || entity[component] === undefined || !Puppets.Components.list[component][entity[component]].enabled) 
+				for(var i = 0; i < listOfComponents.length; i++)
 				{
-					this.COMPONENTS.length = 0;
-					return;
-				}
+					var component = listOfComponents[i];
+					if(entity[component] === null || entity[component] === undefined ||
+					 Puppets.Components.list=== null || Puppets.Components.list === undefined ||
+					  !Puppets.Components.list[component][entity[component]].enabled) 
+					{
+						this.COMPONENTS.length = 0;
+						return;
+					}
 
-				components.push(Puppets.Components.list[component][entity[component]]);
+					components.push(Puppets.Components.list[component][entity[component]]);
+				}
+				components.push(entity);
+				method.apply(null, components);
+				this.COMPONENTS.length = 0;
 			}
-			components.push(entity);
-			method.apply(null, components);
-			this.COMPONENTS.length = 0;
 		}
 	}
 
