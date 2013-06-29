@@ -20,7 +20,7 @@ function init()
 	audioInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-	new Puppets(["RenderShape", "Kinematic", "RenderPulse"]);
+	new Puppets(["RenderShape","RenderStroke", "AttackSystem", "Kinematic", "RenderPulse"]);
 
 	//Instanciate background entity
 	Puppets.Entities.createEntity(
@@ -40,10 +40,24 @@ function init()
 		{
 			renderShape : {"color" : "white"},
 			size2d : {'radius' : RADIUSBALL},
-			position2d : {'x' : 400, 'y' : 400},
-			velocity2d : {'x' : 1, 'y' : 0}
+			position2d : {'x' : 400, 'y' : 400}
 		}
 	);
+
+	Puppets.Entities.createEntity(
+		entitiesModels["cage"],
+		{
+			renderStroke : {"color" : "red", "shape" : "square", "weight" : 10},
+			size2d :
+			{
+				"width"  : canvas.width,
+				"height" : canvas.height
+			},
+			
+		}
+	);
+
+	createPlayer();
 
 	gameloop();
 }
