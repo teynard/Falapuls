@@ -38,15 +38,15 @@ function init()
 	Puppets.Entities.createEntity(
 		entitiesModels["rectParent"], 
 		{ 
-			renderShape : {"color" : "white"},
+			renderShape : {"color" : "purple"},
 			size2d : 
 			{
 				"width"  : canvas.width/2,
 				"height" : canvas.height/2
 			},
-			position2d : {"x" : canvas.width/2,"y" : 0},
-			childs : 4,
-			positionId : "top-left"
+			position2d : {"x" : 0,"y" : 0},
+			childs : {number : 4},
+			positionId : { corner : "top-left"}
 		}
 	);
 	// Puppets.Entities.removeComponent(1,'renderShape');
@@ -61,8 +61,8 @@ function init()
 				"height" : canvas.height/2
 			},
 			position2d : {"x" : canvas.width/2,"y" : 0},
-			childs : 4,
-			positionId : "top-right"
+			childs : {number : 4},
+			positionId : { corner : "top-right"}
 		}
 	);
 	// Puppets.Entities.removeComponent(6,'renderShape');
@@ -77,8 +77,8 @@ function init()
 				"height" : canvas.height/2
 			},
 			position2d : {"x" : canvas.width/2,"y" : canvas.height/2},
-			childs : 4,
-			positionId : "bottom-left"
+			childs : {number : 4},
+			positionId : { corner : "bottom-left" }
 		}
 	);
 	// Puppets.Entities.removeComponent(11,'renderShape');
@@ -93,8 +93,8 @@ function init()
 				"height" : canvas.height/2
 			},
 			position2d : {"x" : 0,"y" : canvas.height/2},
-			childs : 4,
-			positionId : "bottom-right"
+			childs : {number : 4},
+			positionId : { corner : "bottom-right" }
 		}
 	);
 	MapGeneration.method();
