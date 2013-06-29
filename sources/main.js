@@ -20,7 +20,7 @@ function init()
 	audioInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-	new Puppets(["RenderShape","RenderStroke", "AttackSystem", "Kinematic", "RenderPulse"]);
+	new Puppets(["RenderShape","RenderStroke", "AttractorSystem", "Kinematic", "RenderPulse"]);
 
 	//Instanciate background entity
 	// background
@@ -99,10 +99,35 @@ function init()
 		}
 	);
 	MapGeneration.method();
+
+	Puppets.Entities.createEntity(
+		entitiesModels["ball"],
+		{
+			renderShape : {"color" : "white"},
+			size2d : {'radius' : RADIUSBALL},
+			position2d : {'x' : 400, 'y' : 400}
+		}
+	);
+
+	Puppets.Entities.createEntity(
+		entitiesModels["cage"],
+		{
+			renderStroke : {"color" : "red", "shape" : "square", "weight" : 10},
+			size2d :
+			{
+				"width"  : canvas.width,
+				"height" : canvas.height
+			},
+			
+		}
+	);
+
+	createPlayer();
 	
 	// Puppets.Entities.removeComponent(16,'renderShape');
 
 	gameloop();
+	console.log(Puppets.Entities.list);
 }
 
 
@@ -178,7 +203,7 @@ function launchPulse(buffer)
 		{ 
 			renderPulse : { "color" : "rgb(255,255,0)", "buffer" : buffer, "compteur" : 0 },
 			position2d  : { "x" : 200, "y" : 200 },
-			size2d      : { "radius" : 1 }
+			size2d      : { "radius" : 3 }
 		}
 	);
 }

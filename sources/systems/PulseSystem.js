@@ -15,10 +15,12 @@ var RenderPulse =
 			Puppets.Entities.removeEntity(renderPulse.entity);
 		}
 		
+		
+
 		context.strokeStyle = renderPulse.color;
 		context.lineWidth = 3; 
 		context.beginPath();
-		context.arc(position2d.x,position2d.y,renderPulse.compteur*size2d.radius, 0, 2*Math.PI);
+		context.arc(position2d.x,position2d.y,(renderPulse.compteur/buffer.duration)*size2d.radius, 0, 2*Math.PI);
 		context.stroke();
 	}
 }
