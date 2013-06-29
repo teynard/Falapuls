@@ -33,7 +33,18 @@ function init()
 			}
 		}
 	);
-
+	Puppets.Entities.createEntity(
+		entitiesModels["rect"], 
+		{ 
+			renderShape : {"color" : "white"},
+			size2d : 
+			{
+				"width"  : canvas.width/2,
+				"height" : canvas.height/2
+			}
+		}
+	);
+	// Puppets.Entities.removeComponent(1,'renderShape');
 	gameloop();
 }
 
