@@ -19,7 +19,7 @@ function init()
 	canvasInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-	new Puppets(["RenderShape","RenderStroke", "AttackSystem", "ColliderCageSystem", "Kinematic"]);
+	new Puppets(["RenderShape","RenderStroke", "AttractorSystem", "Kinematic"]);
 
 	//Instanciate background entity
 	Puppets.Entities.createEntity(
