@@ -78,7 +78,7 @@ function init()
 			},
 			position2d : {"x" : canvas.width/2,"y" : canvas.height/2},
 			childs : {number : 4},
-			positionId : { corner : "bottom-left" }
+			positionId : { corner : "bottom-right" }
 		}
 	);
 	// Puppets.Entities.removeComponent(11,'renderShape');
@@ -94,7 +94,7 @@ function init()
 			},
 			position2d : {"x" : 0,"y" : canvas.height/2},
 			childs : {number : 4},
-			positionId : { corner : "bottom-right" }
+			positionId : { corner : "bottom-left" }
 		}
 	);
 	MapGeneration.method();

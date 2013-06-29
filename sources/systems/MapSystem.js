@@ -20,39 +20,45 @@ var MapGeneration =
 			console.log(_parent);
 			var _positionArea;
 			var _size = {w : 90 , h : 90};
-			switch (_parent.positionId.corner)
+			var _color = ["#00FF00","#00BB00","#009900","#006600"]
+			var _operateur = { x:100,y:100}; 
+			var _x = 100;
+			for (var _number = 0 ;_number < _parent.childs.number; _number++)
 			{
-				case "top-left":
-					_positionArea = { x: _parent.position2d.x , y:_parent.position2d.y };
-				break;
-				case "top-right":
-				
-				break;
-				case "bottom-left":
-				
-				break;
-				case "bottom-right":
-				
-				break;
-			};
-
-			for (var _number = 0, _x = 0;_number < _parent.childs.number; _number++, _x++)
-			{
-				// console.log(_x," <x lolol number> ",_number);
+				switch (_parent.positionId.corner)
+				{
+					case "top-left":
+						_positionArea = { x: (_parent.size2d.width-_size.w)-_operateur.x, y:(_parent.size2d.height-_size.h)-_operateur.y };
+						_operateur.x +=100 ;
+						_operateur.y +=100 ;
+					break;
+					case "top-right":
+						_positionArea = { x: (_parent.position2d.x), y:(_parent.size2d.height-_size.h)-_operateur.y };
+						_operateur.y +=100 ;
+					break;
+					case "bottom-left":
+						_positionArea = { x: (_parent.size2d.width-_size.w)-_operateur.x, y:(_parent.position2d.y) };
+						_operateur.x +=100 ;
+						_operateur.y -=100 ;
+					break;
+					case "bottom-right":
+						_positionArea = { x: (_parent.position2d.x), y:(_parent.position2d.y) };
+					break;
+				};
 				Puppets.Entities.createEntity(
 					entitiesModels["rectChild"], 
 					{ 
-						renderShape : {"color" : "yellow"},
 						size2d : 
 						{
-							"width"  : canvas.width/2,
-							"height" : canvas.height/2
+							"width"  : _size.w+(_x),
+							"height" : _size.h+(_x)
 						},
-						position2d : {"x" : 0,"y" : canvas.height/2},
+						position2d : _positionArea,
 						parent : {number : idParent},
-						positionId : { corner : _parent.positionId.corner }
+						positionId : {corner : _parent.positionId.corner}
 					}
 				);
+				_x+=100;
 			}
 		}
 		init();
