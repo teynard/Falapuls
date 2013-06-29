@@ -5,49 +5,19 @@ var RADIUSBALL = 50;
 
 function createPlayer()
 {
-	Puppets.Entities.createEntity(
+	for(var i = 0; i < 3; i++)
+	{
+		Puppets.Entities.createEntity(
 		entitiesModels["attractor"], 
 		{ 
-			catchForces : {"force" : Math.round(Math.random()*3)},
+			catchForces : {"force" : Math.round(Math.random()*10)},
 			fromPlayer : {"player" : 1},
-			position2d : {"x" : 50, "y" : 50},
+			position2d : {"x" : Math.random()*700, "y" : Math.random()*500},
 			size2d : {"radius" : 20},
 			renderShape : {"color" : "white"}
 		}
 		);
-
-	Puppets.Entities.createEntity(
-		entitiesModels["attractor"], 
-		{ 
-			catchForces : {"force" : Math.round(Math.random()*3)},
-			fromPlayer : {"player" : 2},
-			position2d : {"x" : 700, "y" : 50},
-			size2d : {"radius" : 20},
-			renderShape : {"color" : "white"}
-		}
-		);
-
-	Puppets.Entities.createEntity(
-		entitiesModels["attractor"], 
-		{ 
-			catchForces : {"force" : Math.round(Math.random()*3)},
-			fromPlayer : {"player" : 3},
-			position2d : {"x" : 50, "y" : 500},
-			size2d : {"radius" : 20},
-			renderShape : {"color" : "white"}
-		}
-		);
-
-	Puppets.Entities.createEntity(
-		entitiesModels["attractor"], 
-		{ 
-			catchForces : {"force" : Math.round(Math.random()*3)},
-			fromPlayer : {"player" : 4},
-			position2d : {"x" : 700, "y" : 500},
-			size2d : {"radius" : 20},
-			renderShape : {"color" : "white"}
-		}
-		);
+	}
 }
 
 function rand(min, max) {

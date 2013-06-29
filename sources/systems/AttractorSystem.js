@@ -18,7 +18,7 @@ var AttractorSystem =
 			direction = Vectors.add(direction, tempDirection);
 		}
 		var newVelocity = Vectors.add(direction, velocity2d);
-		newVelocity = Vectors.limit(newVelocity, 10);
+		newVelocity = Vectors.limit(newVelocity, 40);
 		velocity2d.x = newVelocity.x;
 		velocity2d.y = newVelocity.y;
 	}	

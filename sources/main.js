@@ -34,27 +34,17 @@ function init()
 		}
 	);
 
-	Puppets.Entities.createEntity(
+	for(var i = 0; i < 50; i++)
+	{
+		Puppets.Entities.createEntity(
 		entitiesModels["ball"],
 		{
-			renderShape : {"color" : "white"},
+			renderShape : {"color" : get_random_color()},
 			size2d : {'radius' : RADIUSBALL},
-			position2d : {'x' : 400, 'y' : 400}
+			position2d : {'x' : Math.random()*700, 'y' : Math.random()*500}
 		}
-	);
-
-	Puppets.Entities.createEntity(
-		entitiesModels["cage"],
-		{
-			renderStroke : {"color" : "red", "shape" : "square", "weight" : 10},
-			size2d :
-			{
-				"width"  : canvas.width,
-				"height" : canvas.height
-			},
-			
-		}
-	);
+		);
+	}
 
 	createPlayer();
 
