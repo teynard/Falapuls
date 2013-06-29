@@ -19,7 +19,7 @@ function init()
 	canvasInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-	new Puppets(["RenderShape"]);
+	new Puppets(["RenderShape", "Kinematic"]);
 
 	//Instanciate background entity
 	Puppets.Entities.createEntity(
@@ -45,6 +45,7 @@ function init()
 		}
 	);
 	// Puppets.Entities.removeComponent(1,'renderShape');
+
 	gameloop();
 }
 

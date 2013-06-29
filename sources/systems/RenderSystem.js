@@ -14,7 +14,9 @@ var RenderShape =
 			break;
 
 			case "circle":
+				context.beginPath();	
 				context.arc(position2d.x,position2d.y,size2d.radius, 0, 2*Math.PI);
+				context.fill();
 			break;	
 		}
 	}
