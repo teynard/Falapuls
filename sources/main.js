@@ -19,7 +19,7 @@ function init()
 	canvasInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-	new Puppets(["RenderShape","RenderStroke", "AttackSystem", "Kinematic"]);
+	new Puppets(["RenderShape","RenderStroke", "AttackSystem", "Kinematic","AreaDetection"]);
 
 	//Instanciate background entity
 	// background
