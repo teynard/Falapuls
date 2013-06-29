@@ -19,7 +19,7 @@ function init()
 	canvasInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-	new Puppets(["RenderShape"]);
+	new Puppets(["RenderShape", "Kinematic"]);
 
 	//Instanciate background entity
 	Puppets.Entities.createEntity(
@@ -31,6 +31,16 @@ function init()
 				"width"  : canvas.width,
 				"height" : canvas.height
 			}
+		}
+	);
+
+	Puppets.Entities.createEntity(
+		entitiesModels["ball"],
+		{
+			renderShape : {"color" : "white"},
+			size2d : {'radius' : RADIUSBALL},
+			position2d : {'x' : 400, 'y' : 400},
+			velocity2d : {'x' : 1, 'y' : 0}
 		}
 	);
 
