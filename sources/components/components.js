@@ -4,7 +4,7 @@ var componentsModels =
 
 	ballCenter : "return {}",
 
-    colliderCage : "return {}",
+	colliderCage : "return {}",
 
 	fromPlayer : "return {player : datas.player};",
 
