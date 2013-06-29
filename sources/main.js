@@ -1,4 +1,4 @@
-window.onload = init;
+// window.onload = init;
 
 //looping function
 window.requestAnimFrame = (function(){
