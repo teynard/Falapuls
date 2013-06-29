@@ -1,4 +1,109 @@
 body
 {
 	margin: 0;
+	font-family: DefaultFont;
+}
+/*Centre le canvas au centre de la page, peut importe la résolution*/
+canvas {
+	text-align:center;
+	width:1024px;
+	height:768px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	display: none;
+}
+@font-face {
+    font-family: DefaultFont;
+    src: url(../medias/fonts/stalinistone_regular.ttf);
+    font-weight:400;
+}
+#menu {
+	width:1024px;
+	height:768px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	display: inline;
+	background-image: url(../medias/images/menu_background.png);
+}
+
+#title {
+	position: absolute;
+	font-size: 0px;
+	color: white;
+	width:1024px;
+	height:768px;
+	text-align:center;
+	margin: auto;
+}
+#playButton {
+	position: absolute;
+	width: 400px;
+	height: 100px;
+	background-color: red;
+	margin-left: 312px;
+	margin-top:334px;
+	text-align:center;
+	font-size: 70px;
+	color: white;
+	display: none;
+}
+#credits {
+	position: absolute;
+	margin-top: 620px;
+	margin-left: 620px;
+	font-size: 20px;
+	width: 400px;
+	color: white;
+	text-align:right;
+	display: none;
+}
+#player1Select {
+	position: absolute;
+	width: 512px;
+	height: 384px;
+	margin-left: -512px;
+	margin-top: -384px;
+	background-color: yellow;
+}
+#player2Select {
+	position: absolute;
+	width: 512px;
+	height: 384px;
+	margin-left: 1024px;
+	margin-top: -384px;
+	background-color: green;
+}
+#player3Select {
+	position: absolute;
+	width: 512px;
+	height: 384px;
+	margin-left: -512px;
+	margin-top: 768px;
+	background-color: blue;
+}
+#player4Select {
+	position: absolute;
+	width: 512px;
+	height: 384px;
+	margin-left: 1024px;
+	margin-top: 768px;
+	background-color: purple;
+}
+/*Background*/
+html {
+	background-image: url(../medias/images/background.png) !important;
+	background-repeat:repeat;
+	background-position: bottom right;
+	-webkit-background-size: auto;
+	-moz-background-size: auto;
+	-o-background-size: auto;
+	background-size: auto;
 }
