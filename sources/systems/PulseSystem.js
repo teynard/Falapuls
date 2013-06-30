@@ -15,8 +15,6 @@ var RenderPulse =
 			Puppets.Entities.removeEntity(renderPulse.entity);
 		}
 		
-		
-
 		context.strokeStyle = renderPulse.color;
 		context.lineWidth = 3; 
 		context.beginPath();

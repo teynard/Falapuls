@@ -23,6 +23,18 @@ function playerGeneration(numbOfPlayer)
 		var attractorId = Puppets.Entities.createEntity(
 		entitiesModels["attractor"], 
 		{ 
+			catchForces : {"force" : 0},
+			fromPlayer : {"player" : count},
+			position2d : positionAttractor[count],
+			size2d : {"radius" : 20},
+			renderShape : {"color" : "white"}
+		}
+		);
+
+
+		 Puppets.Entities.createEntity(
+		entitiesModels["attractor"], 
+		{ 
 			catchForces : {"force" : 10},
 			fromPlayer : {"player" : count},
 			position2d : positionAttractor[count],
