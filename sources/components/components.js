@@ -33,4 +33,15 @@ var componentsModels =
     renderStroke : "return {color : datas.color || 0, shape : datas.shape || 0, weight : datas.weight || 0};",
 
     renderPulse : "return {color : datas.color || 0, buffer : datas.buffer, compteur : datas.compteur, entity : entity };",
+
+    attractorId : "return {number : datas.number || console.log('attractorId de '+entity+' est vide') };",
+
+    life : "return {number : datas.number || '100' };",
+
+    rectParentId : "return {number : datas.number || console.log('rectParentId de '+entity+' est vide') };",
+
+    id : "return {number : datas.number };"
+
+
+
 }
