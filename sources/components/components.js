@@ -1,10 +1,12 @@
 var componentsModels =
 {
+
     attackOne : "return {force : datas.force || 1, coolDown : datas.coolDown ||1, count : datas.count || 1}",
 
     attackTwo : "return {force : datas.force || 2, coolDown : datas.coolDown || 2, count : datas.count || 2}",
 
     attackThree : "return {force : datas.force || 3, coolDown : datas.coolDown || 3, count : datas.count || 3}",
+
 
 	cageArea : "return {restitution : 5}",
 

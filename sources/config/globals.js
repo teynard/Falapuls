@@ -53,7 +53,8 @@ function createPlayer()
 
 function attack(player, attack)
 {
-	var players = Puppets.Entities.getComponents(Puppets.find("fromPlayer player=="+player, true))[0];
+	players = Puppets.Entities.getComponents(Puppets.find("fromPlayer player=="+(player-1), true))[0];
+	console.log(player);
 	switch (attack)
 	{
 		case 1: 

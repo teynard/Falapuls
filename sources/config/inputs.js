@@ -17,6 +17,7 @@ function keyUp(e)
 
 function spellInput(playerNum, spellKeys)
 {
+	console.log(playerNum)
 	if (keys[spellKeys[0]])
 	{
 		console.log("SORT 1 du JOUEUR " + (playerNum));

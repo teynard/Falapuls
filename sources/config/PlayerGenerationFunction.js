@@ -19,7 +19,7 @@ function playerGeneration(numbOfPlayer)
 			positionId : { corner : positionId[count] }
 		}
 		);
-		var positionAttractor = [{"x" : 256, "y" : 192},{"x" : 768, "y" : 192},{"x" : 768, "y" : 576},{"x" : 256, "y" : 576}]
+		var positionAttractor = [{"x" : 256, "y" : 192},{"x" : 768, "y" : 192},{"x" : 768, "y" : 576},{"x" : 256, "y" : 576}];
 		var attractorId = Puppets.Entities.createEntity(
 		entitiesModels["attractor"], 
 		{ 
