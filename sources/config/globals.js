@@ -54,21 +54,25 @@ function createPlayer()
 function attack(player, attack)
 {
 	players = Puppets.Entities.getComponents(Puppets.find("fromPlayer player=="+(player-1), true))[0];
-	console.log(player);
+	var ballToLaunch = null;
 	switch (attack)
 	{
 		case 1: 
 			attack = players.attackOne;
+			ballToLaunch = Puppets.find("attracted name=='attackOne'&&object.player=="+(player-1), true)
 		break;
 		case 2: 
 			attack = players.attackTwo;
+			ballToLaunch = Puppets.find("attracted name=='attackTwo'&&object.player=="+(player-1), true)
 		break;
 		case 3: 
 			attack = players.attackThree;
+			ballToLaunch = Puppets.find("attracted name=='attackThree'&&object.player=="+(player-1), true)
 		break;
 	}
 	if(attack.count/60 >= attack.coolDown)
 	{
+		console.log(ballToLaunch)
 		switch (attack.force)
 		{
 			case 1: 
@@ -81,6 +85,7 @@ function attack(player, attack)
 				launchPulse(audioBufferList[2],player);
 			break;
 		}
+		Puppets.Entities.getComponents(ballToLaunch)[0].attracted.attractor = Puppets.find("ballCenter", true)[0];
 		players.catchForces.force -= attack.force;
 		attack.count = 0;
 	}

@@ -6,7 +6,7 @@ var AttractorSystem =
 		var attractors = Puppets.Entities.getComponents(Puppets.find("fromPlayer", true));
 		for (var i = 0, attractor; attractor = attractors[i]; i += 1) {
 			var direction = Vectors.normalize(Vectors.sub(attractor.position2d, position2d))
-				, force = Vectors.mult(direction, Math.floor(attractor.catchForces.force))
+				, force = Vectors.mult(direction, Math.round(attractor.catchForces.force))
 
 			var tempVelocity = velocity2d;
 			tempVelocity.x += force.x;

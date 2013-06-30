@@ -1,5 +1,9 @@
 var componentsModels =
 {
+    attackChooser : "return {name : datas.name || null}",
+
+    attracted : "return {attractor : datas.attractor, player : datas.player || 0, speed : datas.speed || 3, name : datas.name}",
+
     attackOne : "return {force : datas.force || 1, coolDown : datas.coolDown ||1, count : datas.count || 1}",
 
     attackTwo : "return {force : datas.force || 2, coolDown : datas.coolDown || 2, count : datas.count || 2}",

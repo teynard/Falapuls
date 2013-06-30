@@ -1,6 +1,8 @@
 function playerGeneration(numbOfPlayer)
 {
 	var color = ["hsla(248, 100%, 41%, 1)","hsla(200, 100%, 55%, 1)","hsla(212, 100%, 45%, 1)","hsla(223, 100%, 47%, 1)"];
+	var colorAttacks = [get_random_color(),get_random_color(),get_random_color()];
+	var attackType = ["attackOne","attackTwo","attackThree"];
 	var position2d = [{"x" : 0,"y" : 0},
 					{"x" : canvas.width/2,"y" : 0},
 					{"x" : canvas.width/2,"y" : canvas.height/2},
@@ -26,10 +28,24 @@ function playerGeneration(numbOfPlayer)
 			catchForces : {"force" : 0},
 			fromPlayer : {"player" : count},
 			position2d : positionAttractor[count],
-			size2d : {"radius" : 20},
+			size2d : {"radius" : 30},
 			renderShape : {"color" : "white"}
 		}
 		);
+		for(var i = 0; i < 3; i++)
+		{
+			Puppets.Entities.createEntity(
+			entitiesModels["attack"], 
+			{ 
+				attackChooser : {"name" : attackType[i]},
+				attracted : {"attractor" : attractorId, "player" : count,"name" : attackType[i]},
+				position2d : {'x' : Math.random()*700, 'y' : Math.random()*500},
+				size2d : {"radius" : 15},
+				renderShape : {"color" : colorAttacks[i]},
+				velocity2d : {"x" : 50, "y" : 50}
+			}
+			);	
+		}
 		// creation de l'entité player
 		Puppets.Entities.createEntity(
 		entitiesModels["player"],
