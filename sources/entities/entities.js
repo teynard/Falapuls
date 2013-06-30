@@ -6,5 +6,6 @@ var entitiesModels =
 	rectChild :{"components" : [ "position2d", "size2d","parent"]},
 	attractor :{"components" : [{"renderShape" : {"shape" : "circle"}}, "catchForces", "fromPlayer", "position2d", "size2d"]},
 	cage :{"components" : ["cageArea", "position2d", "renderStroke", "size2d"]},
-	pulse :{"components" : ["renderPulse", "position2d", "size2d"]}
+	pulse :{"components" : ["renderPulse", "position2d", "size2d"]},
+	player :{"components" : ["attractorId", "life", 'rectParentId',"id"]}
 }
