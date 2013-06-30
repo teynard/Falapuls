@@ -53,12 +53,35 @@ function createPlayer()
 
 function attack(player, attack)
 {
-	player = Puppets.Entities.getComponents(Puppets.find("fromPlayer player="+player, true))[0];
+	players = Puppets.Entities.getComponents(Puppets.find("fromPlayer player=="+(player-1), true))[0];
 	console.log(player);
-	attack = player[attack];
-	if(attack.count >= attack.coolDown)
+	switch (attack)
 	{
-		player.catchForces.force -= attack.force;
+		case 1: 
+			attack = players.attackOne;
+		break;
+		case 2: 
+			attack = players.attackTwo;
+		break;
+		case 3: 
+			attack = players.attackThree;
+		break;
+	}
+	if(attack.count/60 >= attack.coolDown)
+	{
+		switch (attack.force)
+		{
+			case 1: 
+				launchPulse(audioBufferList[0],player);
+			break;
+			case 2: 
+				launchPulse(audioBufferList[1],player);
+			break;
+			case 3: 
+				launchPulse(audioBufferList[2],player);
+			break;
+		}
+		players.catchForces.force -= attack.force;
 		attack.count = 0;
 	}
 }

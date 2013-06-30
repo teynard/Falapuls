@@ -41,9 +41,10 @@ function init()
 		Puppets.Entities.createEntity(
 		entitiesModels["ball"],
 		{
-			renderShape : {"color" : get_random_color()},
+			renderShape : {"color" : "hsla(320, 100%, 50%, 1)"},
 			size2d : {'radius' : RADIUSBALL},
-			position2d : {'x' : Math.random()*700, 'y' : Math.random()*500}
+			position2d : {'x' : Math.random()*700, 'y' : Math.random()*500},
+			velocity2d : {'x' : 1, 'y' : 1}
 		}
 		);
 	
@@ -109,24 +110,32 @@ function audioInstanciation()
 function finishedLoading(bufferList) {
 	
 	window.audioBufferList = bufferList;
-	console.log(audioBufferList);
 }
 
-function launchPulse(buffer)
+function launchPulse(buffer,player)
 {
-	var source = audioContext.createBufferSource();
-	source.buffer = buffer;
-	source.connect(audioContext.destination);
-	source.start(0);
-	console.log(buffer);
+	var players = Puppets.Entities.getComponents(Puppets.find("life",true))
 
-
-	Puppets.Entities.createEntity(
-		entitiesModels["pulse"], 
-		{ 
-			renderPulse : { "color" : "rgb(255,255,0)", "buffer" : buffer, "compteur" : 0 },
-			position2d  : { "x" : 200, "y" : 200 },
-			size2d      : { "radius" : 3 }
+	for (var numberoff=0;numberoff< players.length;numberoff++)
+	{
+		if (players[numberoff].id.number == player-1)
+		{
+			var source = audioContext.createBufferSource();
+			source.buffer = buffer;
+			source.connect(audioContext.destination);
+			source.start(0);
+			console.log(buffer);
+			var position2d_temp = [{"x" : 256, "y" : 192},{"x" : 768, "y" : 192},{"x" : 768, "y" : 576},{"x" : 256, "y" : 576}]
+			Puppets.Entities.createEntity( 
+				entitiesModels["pulse"], 
+				{ 
+					renderPulse : { "color" : "rgb(255,255,0)", "buffer" : buffer, "compteur" : 0 },
+					position2d  : position2d_temp[players[numberoff].id.number],
+					size2d      : { "radius" : 3 }
+				}
+			);
+					// console.log(position2d_temp)		
+			
 		}
-	);
+	}
 }
