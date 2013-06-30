@@ -3,14 +3,27 @@ function playerGeneration(numbOfPlayer)
 	var color = ["hsla(248, 100%, 41%, 1)","hsla(200, 100%, 55%, 1)","hsla(212, 100%, 45%, 1)","hsla(223, 100%, 47%, 1)"];
 	var colorAttacks = [get_random_color(),get_random_color(),get_random_color()];
 	var attackType = ["attackOne","attackTwo","attackThree"];
+	window.addEventListener("keydown", keyDown, true);
+	window.addEventListener("keyup", keyUp, true);
 	var position2d = [{"x" : 0,"y" : 0},
 					{"x" : canvas.width/2,"y" : 0},
 					{"x" : canvas.width/2,"y" : canvas.height/2},
 					{"x" : 0,"y" : canvas.height/2}];
+	
 	var positionId = ["top-left","top-right","bottom-right","bottom-left"];
+	
 	var numbOfPlayer = numbOfPlayer;
+	
+	if(numbOfPlayer == 2 )
+	PlayersBool = [true,true,false,false];
+	else if (numbOfPlayer == 3)
+		PlayersBool = [true,true,true,false];
+	else if (numbOfPlayer == 4 )
+		PlayersBool = [true,true,true,true];
+	
 	for (var count = 0; count<numbOfPlayer ; count++)
 	{
+		
 		var rectangleId = Puppets.Entities.createEntity(
 		entitiesModels["rectParent"], 
 		{ 
@@ -54,6 +67,7 @@ function playerGeneration(numbOfPlayer)
 			life : {'number' : "100"},
 			rectParentId: {'number' : rectangleId },
 			id : {'number' : count},
+			idListLife : {'number' : count}
 		}
 		);
 	}

@@ -35,18 +35,21 @@ var AreaDetection =
 }
 function testDistance(players,distance,player)
 {
-		// console.log(players[player].life.numberof);
+		// console.log(players[player].life);
 	if(distance<=200&& distance>150)
 	{
-		players[player].life.number -=0.001;
+		players[player].life.number -=0.01;
+		//Puppets.Entities.getComponents(players[player].rectParentId.number)[0].renderOpacity.opacity -= 0.001;
 	}
 	else if(distance<=150 && distance>100)
 	{
-		players[player].life.number -=0.001;
+		players[player].life.number -=0.10;
+		//Puppets.Entities.getComponents(players[player].rectParentId.number)[0].renderOpacity.opacity -= 0.001;
 	}
 	else if(distance<=100)
 	{
-		players[player].life.number -=0.001;
+		players[player].life.number -=0.3;
+		//Puppets.Entities.getComponents(players[player].rectParentId.number)[0].renderOpacity.opacity -= 0.001;
 	}
 }
 function sqr(x)

@@ -20,8 +20,7 @@ function init()
 	audioInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-
-	new Puppets(["RenderShape","RenderStroke", "AttackSystem", "AttractedSystem","AttractorSystem", "Kinematic", "RenderPulse","AreaDetection"]);
+	new Puppets(["RenderShape","RenderStroke","RenderRectParent","lifeDetection", "AttackSystem", "AttractedSystem","AttractorSystem", "Kinematic", "RenderPulse","AreaDetection"]);
 
 
 	//Instanciate background entity

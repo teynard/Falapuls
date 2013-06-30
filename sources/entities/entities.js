@@ -1,7 +1,7 @@
 var entitiesModels =
 {
 	rect :{"components" : [{"renderShape" : {"shape" : "square"}}, "position2d", "size2d"]},
-	rectParent :{"components" : [{"renderShape" : {"shape" : "square"}}, "position2d", "size2d","childs","positionId"]},
+	rectParent :{"components" : [{"renderShape" : {"shape" : "square"}}, "position2d", "size2d","childs","positionId","renderOpacity"]},
 	ball :{"components" : [{"renderShape" : {"shape" : "circle"}}, "position2d", "size2d", "velocity2d", "ballCenter", "colliderCage"]},
 	// head > ball :{"components" : [{"renderShape" : {"shape" : "circle"}}, "position2d", "size2d", "velocity2d", "ballCenter"]},
 	rectChild :{"components" : [ "position2d", "size2d","parent"]},
@@ -9,5 +9,5 @@ var entitiesModels =
 	attack :{"components" : [{"renderShape" : {"shape" : "circle"}}, "position2d", "size2d", "attracted", "velocity2d", "attackChooser"]},
 	cage :{"components" : ["cageArea", "position2d", "renderStroke", "size2d"]},
 	pulse :{"components" : ["renderPulse", "position2d", "size2d"]},
-	player :{"components" : ["attractorId", "life", 'rectParentId',"id"]}
+	player :{"components" : ["attractorId", "life", 'rectParentId',"id","idListLife"]}
 }
