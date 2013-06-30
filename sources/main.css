@@ -55,6 +55,107 @@ canvas {
 	color: white;
 	display: none;
 }
+/*#startButton {
+	position: absolute;
+	width: 400px;
+	height: 100px;
+	background-color: red;
+	margin-left: 312px;
+	margin-top:264px;
+	text-align:center;
+	font-size: 70px;
+	color: white;
+	display: none;
+}
+#playerAdd {
+	position: absolute;
+	width: 400px;
+	height: 100px;
+	background-color: red;
+	margin-left: 312px;
+	margin-top:394px;
+	text-align:center;
+	font-size: 40px;
+	color: white;
+	display: none;
+}*/
+#info {
+	position: absolute;
+	width: 700px;
+	height: 200px;
+	background-color: rgb(211,32,39);
+	margin-left: 162px;
+	margin-top: 64px;
+	text-align: center;
+	font-size: 70px;
+	color: white;
+	display: none;
+}
+#players2 {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	background-color: rgb(84,237,89);
+	margin-left: 162px;
+	margin-top: 284px;
+	text-align: center;
+	font-size: 140px;
+	color: white;
+	display: none;
+}
+#players3 {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	background-color: rgb(0,204,255);
+	margin-left: 412px;
+	margin-top: 284px;
+	text-align: center;
+	font-size: 140px;
+	color: white;
+	display: none;
+}
+#players4 {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	background-color: rgb(255,237,0);
+	margin-left: 662px;
+	margin-top: 284px;
+	text-align: center;
+	font-size: 140px;
+	color: white;
+	display: none;
+}
+.borderMenu:hover
+{
+	outline:10px solid black;
+}
+
+.borderMenu
+{
+	outline:0px solid black;
+}
+#tutorial {
+	position: absolute;
+	width: 700px;
+	height: 210px;
+	background-image: url(../medias/images/clavier.png);
+	background-size: 700px;
+	background-repeat: no-repeat;
+	margin-left: 320px;
+	margin-top: 504px;
+	text-align: center;
+	font-size: 70px;
+	color: white;
+	display: none;
+}
+#manette{
+	position: absolute;
+	margin-left: 10px;
+	margin-top: 504px;
+	display: none;
+}
 #credits {
 	position: absolute;
 	margin-top: 620px;
@@ -65,38 +166,46 @@ canvas {
 	text-align:right;
 	display: none;
 }
+/*.playerText{
+	text-align: center;
+	font-size: 40px;
+}
 #player1Select {
 	position: absolute;
 	width: 512px;
 	height: 384px;
-	margin-left: -512px;
-	margin-top: -384px;
+	margin-left: 0px;
+	margin-top: 0px;
 	background-color: yellow;
+	display: none;
 }
 #player2Select {
 	position: absolute;
 	width: 512px;
 	height: 384px;
-	margin-left: 1024px;
-	margin-top: -384px;
+	margin-left: 512px;
+	margin-top: 0px;
 	background-color: green;
+	display: none;
 }
 #player3Select {
 	position: absolute;
 	width: 512px;
 	height: 384px;
-	margin-left: -512px;
-	margin-top: 768px;
+	margin-left: 0px;
+	margin-top: 384px;
 	background-color: blue;
+	display: none;
 }
 #player4Select {
 	position: absolute;
 	width: 512px;
 	height: 384px;
-	margin-left: 1024px;
-	margin-top: 768px;
+	margin-left: 512px;
+	margin-top: 384px;
 	background-color: purple;
-}
+	display: none;
+}*/
 /*Background*/
 html {
 	background-image: url(../medias/images/background.png) !important;
