@@ -37,7 +37,7 @@ function init()
 				}
 			}
 			);
-		playerGeneration(4);
+		playerGeneration(playerNumber);
 		Puppets.Entities.createEntity(
 		entitiesModels["ball"],
 		{
@@ -96,9 +96,9 @@ function audioInstanciation()
   	bufferLoader = new BufferLoader(
     	audioContext,
     	[
-      		'medias/sounds/accept.mp3',
-      		'medias/sounds/amulet.wav',
-      		'medias/sounds/pumpkin.ogg'
+      		'medias/sounds/accordeon_1.ogg',
+      		'medias/sounds/piano_1.ogg',
+      		'medias/sounds/guitar_1.ogg'
     	],
     	finishedLoading
     );
