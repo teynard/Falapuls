@@ -7,7 +7,5 @@ var Kinematic =
 		position2d.x = newPosition.x;
 		position2d.y = newPosition.y;
 
-		velocity2d.x = 0;
-		velocity2d.y = 0;
 	}
 }

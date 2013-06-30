@@ -4,6 +4,8 @@ var componentsModels =
 
 	ballCenter : "return {}",
 
+	colliderCage : "return {}",
+
 	fromPlayer : "return {player : datas.player};",
 
 	catchForces : "return {force : datas.force || 0, element : datas.element || 'neutre'};",
@@ -24,6 +26,5 @@ var componentsModels =
 
     renderStroke : "return {color : datas.color || 0, shape : datas.shape || 0, weight : datas.weight || 0};",
 
-    velocity2d : "return {x : datas.x || 0, y : datas.y || 0};"
-
+    renderPulse : "return {color : datas.color || 0, buffer : datas.buffer, compteur : datas.compteur, entity : entity };",
 }

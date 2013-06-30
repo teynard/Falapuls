@@ -4,8 +4,6 @@ var AreaDetection =
 	method : function(position2d, size2d, parent)
 	{
 		var area = Puppets.find("parent");		 
-		console.log(area);
-		return;
 
 	}
 }
