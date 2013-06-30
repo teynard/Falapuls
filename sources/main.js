@@ -20,7 +20,7 @@ function init()
 	audioInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-	new Puppets(["RenderShape","RenderStroke", "AttractorSystem", "Kinematic", "RenderPulse"]);
+	new Puppets(["RenderShape","RenderStroke", "AttackSystem", "AttractorSystem", "Kinematic", "RenderPulse"]);
 
 	//Instanciate background entity
 	// background
@@ -93,24 +93,21 @@ function init()
 				"width"  : canvas.width/2,
 				"height" : canvas.height/2
 			},
-			position2d : {"x" : 0,"y" : canvas.height/2},
+			position2d : {"x" : 0,"y" : 400},
 			childs : {number : 4},
 			positionId : { corner : "bottom-right" }
 		}
 	);
 	MapGeneration.method();
 
-	for(var i = 0; i < 50; i++)
+	Puppets.Entities.createEntity(
+	entitiesModels["ball"],
 	{
-		Puppets.Entities.createEntity(
-		entitiesModels["ball"],
-		{
-			renderShape : {"color" : get_random_color()},
-			size2d : {'radius' : RADIUSBALL},
-			position2d : {'x' : Math.random()*700, 'y' : Math.random()*500}
-		}
-		);
+		renderShape : {"color" : get_random_color()},
+		size2d : {'radius' : RADIUSBALL},
+		position2d : {'x' : canvas.width/2, 'y' : canvas.width/2}
 	}
+	);
 
 	createPlayer();
 	
