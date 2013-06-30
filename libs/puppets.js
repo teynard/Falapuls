@@ -97,7 +97,7 @@ Puppets = function (systemList)
 			this.list[id] = entity;
 			this.length++;
 
-			return this.list[id];
+			return this.length-1;
 		},
 		addComponent : function(entity, component, settings, enabled, undefined)
 		{

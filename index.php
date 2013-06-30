@@ -54,12 +54,9 @@
         <script src="sources/main.js"></script>
     	<!-- config files -->
         <script src="sources/config/globals.js"></script>
-        <script src="sources/config/MapGenerationFunction.js"></script>
         <script src="sources/config/inputs.js"></script>
         <script src="sources/config/BufferLoader.js"></script>
-        <script src="sources/config/PlayerGenerationFunction.js"></script>
-
-        <!-- libs -->
+    	<!-- libs -->
         <script src="libs/jquery.js"></script>
         <script src="libs/jquery-ui.js"></script>
         <script src="libs/puppets.js"></script>
@@ -70,10 +67,14 @@
         <script src="sources/systems/RenderStroke.js"></script>
         <script src="sources/systems/RenderSystem.js"></script>
         <script src="sources/systems/KinematicSystem.js"></script>
-        <script src="sources/systems/AreaDetectionSystem.js"></script>
+<<<<<<< HEAD
+        <script src="sources/systems/AttractorSystem.js"></script>
         <script src="sources/systems/ColliderCageSystem.js"></script>
+=======
+        <script src="sources/systems/MapSystem.js"></script>
         <script src="sources/systems/PulseSystem.js"></script>
         <script src="sources/systems/AttractorSystem.js"></script>
+>>>>>>> 9ea4e30536cdfdd17858cdce6ec4439b2fdd7fb3
         <!-- components -->
         <script src="sources/components/components.js"></script>
         <!-- menu files -->
