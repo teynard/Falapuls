@@ -26,11 +26,6 @@ var AreaDetection =
 						testDistance(players,distance,attractor[numberof].fromPlayer.player);
 				break;
 			}
-			
-		}
-		// var numBall =  Puppets.find("ballCenter", true);
-		// var ball = Puppets.Entities.list[numBall[0]];
-
 	}
 }
 function testDistance(players,distance,player)
