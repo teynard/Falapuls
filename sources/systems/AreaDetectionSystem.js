@@ -13,10 +13,11 @@ var AreaDetection =
 			var distance = Math.sqrt(sqr((attractor[numberof].position2d.y)- gravityPosition.y) + sqr(attractor[numberof].position2d.x- gravityPosition.x));		
 			switch (attractor[numberof].fromPlayer.player)
 			{
-				case 1: if(distance<=200)
-						{
-							players[0].life.number 
-						}
+				case 1: 
+				// if(distance<=200)
+				// 		{
+				// 			players[0].life.number 
+				// 		}
 
 				break;
 				case 2:

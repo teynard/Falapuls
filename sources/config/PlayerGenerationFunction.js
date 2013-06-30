@@ -19,23 +19,11 @@ function playerGeneration(numbOfPlayer)
 			positionId : { corner : positionId[count] }
 		}
 		);
-		var positionAttractor = [{"x" : 256, "y" : 192},{"x" : 768, "y" : 192},{"x" : 768, "y" : 576},{"x" : 256, "y" : 576}]
+		var positionAttractor = [{"x" : 256, "y" : 192},{"x" : 768, "y" : 192},{"x" : 768, "y" : 576},{"x" : 256, "y" : 576}];
 		var attractorId = Puppets.Entities.createEntity(
 		entitiesModels["attractor"], 
 		{ 
 			catchForces : {"force" : 0},
-			fromPlayer : {"player" : count},
-			position2d : positionAttractor[count],
-			size2d : {"radius" : 20},
-			renderShape : {"color" : "white"}
-		}
-		);
-
-
-		 Puppets.Entities.createEntity(
-		entitiesModels["attractor"], 
-		{ 
-			catchForces : {"force" : 10},
 			fromPlayer : {"player" : count},
 			position2d : positionAttractor[count],
 			size2d : {"radius" : 20},

@@ -116,27 +116,27 @@ function launchPulse(buffer,player)
 {
 	var players = Puppets.Entities.getComponents(Puppets.find("life",true))
 
-	for (var numberof=0;numberof< players.length;numberof++)
+	for (var numberoff=0;numberoff< players.length;numberoff++)
 	{
-		console.log(player)
-		console.log(players[numberof].id.number);
-		if (players[numberof].id.number == player-1)
+		if (players[numberoff].id.number == player-1)
 		{
 			var source = audioContext.createBufferSource();
 			source.buffer = buffer;
 			source.connect(audioContext.destination);
 			source.start(0);
 			console.log(buffer);
-
-
-			Puppets.Entities.createEntity(
-				entitiesModels["pulse"], 
-				{ 
-					renderPulse : { "color" : "rgb(255,255,0)", "buffer" : buffer, "compteur" : 0 },
-					position2d  : { "x" : 200, "y" : 200 },
-					size2d      : { "radius" : 3 }
-				}
-			);
+				console.log(players[numberoff].id.number, player)
+				
+					var position2d_temp = [{"x" : 256, "y" : 192},{"x" : 768, "y" : 192},{"x" : 768, "y" : 576},{"x" : 256, "y" : 576}]
+					Puppets.Entities.createEntity( 
+						entitiesModels["pulse"], 
+						{ 
+							renderPulse : { "color" : "rgb(255,255,0)", "buffer" : buffer, "compteur" : 0 },
+							position2d  : position2d_temp[players[numberoff].id.number],
+							size2d      : { "radius" : 3 }
+						}
+					);
+					// console.log(position2d_temp)		
 			
 		}
 	}
