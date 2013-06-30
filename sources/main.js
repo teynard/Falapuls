@@ -20,9 +20,10 @@ function init()
 	audioInstanciation();
 
 	//Instanciate Puppet context with all the systems we use
-	
-	new Puppets(["RenderShape","RenderStroke", "AttractorSystem", "Kinematic", "RenderPulse","AreaDetection"]);
-	
+
+	new Puppets(["RenderShape","RenderStroke", "AttackSystem", "AttractorSystem", "Kinematic", "RenderPulse","AreaDetection"]);
+
+
 	//Instanciate background entity
 	// background
 		Puppets.Entities.createEntity(
@@ -35,7 +36,7 @@ function init()
 					"height" : canvas.height
 				}
 			}
-		);
+			);
 		playerGeneration(4);
 		Puppets.Entities.createEntity(
 		entitiesModels["ball"],
@@ -45,7 +46,6 @@ function init()
 			position2d : {'x' : Math.random()*700, 'y' : Math.random()*500}
 		}
 		);
-	// createPlayer();
 	
 	// Puppets.Entities.removeComponent(16,'renderShape');
 
