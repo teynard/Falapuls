@@ -31,9 +31,20 @@ canvas {
 	bottom: 0;
 	margin: auto;
 	display: inline;
-	background-image: url(../medias/images/menu_background.png);
+	background-image: url(../medias/images/menu_background.jpg);
 }
-
+#gameOver {
+	width:1024px;
+	height:768px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	display: none;
+	background-image: url(../medias/images/menu_background.jpg);
+}
 #title {
 	position: absolute;
 	font-size: 0px;
@@ -41,15 +52,50 @@ canvas {
 	width:1024px;
 	height:768px;
 	text-align:center;
+	display: inherit;
+	margin: auto;
+}
+#gameOverTitle {
+	position: absolute;
+	font-size: 0px;
+	color: white;
+	width:1024px;
+	height:768px;
+	text-align:center;
+	display: inline;
 	margin: auto;
 }
 #playButton {
 	position: absolute;
 	width: 400px;
 	height: 100px;
-	background-color: red;
+	background-color: rgb(211,32,39);
 	margin-left: 312px;
 	margin-top:334px;
+	text-align:center;
+	font-size: 70px;
+	color: white;
+	display: none;
+}
+#retryButton {
+	position: absolute;
+	width: 400px;
+	height: 100px;
+	background-color: rgb(211,32,39);
+	margin-left: 312px;
+	margin-top:284px;
+	text-align:center;
+	font-size: 70px;
+	color: white;
+	display: none;
+}
+#backButton {
+	position: absolute;
+	width: 400px;
+	height: 100px;
+	background-color: rgb(211,32,39);
+	margin-left: 312px;
+	margin-top:444px;
 	text-align:center;
 	font-size: 70px;
 	color: white;
@@ -59,7 +105,7 @@ canvas {
 	position: absolute;
 	width: 400px;
 	height: 100px;
-	background-color: red;
+	background-color: rgb(211,32,39);
 	margin-left: 312px;
 	margin-top:264px;
 	text-align:center;
@@ -71,7 +117,7 @@ canvas {
 	position: absolute;
 	width: 400px;
 	height: 100px;
-	background-color: red;
+	background-color: rgb(211,32,39);
 	margin-left: 312px;
 	margin-top:394px;
 	text-align:center;
@@ -139,7 +185,7 @@ canvas {
 #tutorial {
 	position: absolute;
 	width: 700px;
-	height: 210px;
+	height: 206px;
 	background-image: url(../medias/images/clavier.png);
 	background-size: 700px;
 	background-repeat: no-repeat;
@@ -150,11 +196,21 @@ canvas {
 	color: white;
 	display: none;
 }
+#tutorial:hover
+{
+	background-image: url(../medias/images/clavierHover.png);
+}
 #manette{
 	position: absolute;
+	width: 323px;
+	height: 229px;
 	margin-left: 10px;
 	margin-top: 504px;
+	background-image: url(../medias/images/manette.png);
+	background-size: 100%;
+	opacity: 0.4;
 	display: none;
+	text-align: center;
 }
 #credits {
 	position: absolute;
@@ -164,7 +220,12 @@ canvas {
 	width: 400px;
 	color: white;
 	text-align:right;
+	opacity: 0.4;
 	display: none;
+}
+#manette:hover
+{
+	background-image: url(../medias/images/manetteHover.png);
 }
 /*.playerText{
 	text-align: center;

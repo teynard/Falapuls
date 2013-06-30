@@ -61,3 +61,22 @@ $(players4).click(function(){
 	$(menu).fadeOut(1000);
 	init();
 })
+
+function GameOver()
+{
+	canvas.style.display="inline";
+	$(gameOver).fadeIn(1000, function (){
+	$(gameOverTitle).animate({fontSize:"74"}, 2000, 'easeOutElastic');
+	$(retryButton).toggle("puff");
+	$(backButton).toggle("puff");
+	});
+}
+
+$(backButton).click(function(){
+	document.location ="index.html";
+});
+
+$(retryButton).click(function(){
+	canvas.style.display="inline";
+	init();
+});
