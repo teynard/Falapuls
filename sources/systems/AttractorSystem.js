@@ -4,22 +4,15 @@ var AttractorSystem =
 	method : function(ballCenter,position2d, velocity2d, entity)
 	{
 		var attractors = Puppets.Entities.getComponents(Puppets.find("fromPlayer", true));
-		var direction = {x : 0, y : 0}
-		for(var i = 0; i < attractors.length; i++)
-		{
-			var attractor = attractors[i];
-			var attractorPosition = attractor.position2d;
-			var tempDirection = Vectors.sub(attractorPosition, position2d);
-			var magnitude = Vectors.magnitude(direction)
+		for (var i = 0, attractor; attractor = attractors[i]; i += 1) {
+			var direction = Vectors.normalize(Vectors.sub(attractor.position2d, position2d))
+				, force = Vectors.mult(direction, Math.round(attractor.catchForces.force))
 
-			tempDirection = Vectors.normalize(tempDirection);
-			tempDirection = Vectors.mult(tempDirection, attractor.catchForces.force);
-
-			direction = Vectors.add(direction, tempDirection);
+			var tmpVelocity = velocity2d;
+			tmpVelocity.x += force.x;
+			tmpVelocity.y += force.y;
+			velocity2d.x = Vectors.limit(tmpVelocity, 10).x;
+			velocity2d.y = Vectors.limit(tmpVelocity, 10).y;
 		}
-		var newVelocity = Vectors.add(direction, velocity2d);
-		newVelocity = Vectors.limit(newVelocity, 10);
-		velocity2d.x = newVelocity.x;
-		velocity2d.y = newVelocity.y;
 	}	
 }

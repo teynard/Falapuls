@@ -19,17 +19,17 @@ function spellInput(playerNum, spellKeys)
 {
 	if (keys[spellKeys[0]])
 	{
-		console.log("SORT 1 du JOUEUR " + (playerNum+1));
-		attack((playerNum+1), 1);
+		console.log("SORT 1 du JOUEUR " + (playerNum));
+		attack((playerNum), 1);
 	}
 	else if (keys[spellKeys[1]])
 	{
-		console.log("SORT 2 du JOUEUR " + (playerNum+1));
-		attack((playerNum+1), 2);
+		console.log("SORT 2 du JOUEUR " + (playerNum));
+		attack((playerNum), 2);
 	}
 	else if (keys[spellKeys[2]])
 	{
-		console.log("SORT 3 du JOUEUR " + (playerNum+1));
-		attack((playerNum+1), 3);
+		console.log("SORT 3 du JOUEUR " + (playerNum));
+		attack((playerNum), 3);
 	}
 }

@@ -41,9 +41,10 @@ function init()
 		Puppets.Entities.createEntity(
 		entitiesModels["ball"],
 		{
-			renderShape : {"color" : get_random_color()},
+			renderShape : {"color" : "hsla(320, 100%, 50%, 1)"},
 			size2d : {'radius' : RADIUSBALL},
-			position2d : {'x' : Math.random()*700, 'y' : Math.random()*500}
+			position2d : {'x' : Math.random()*700, 'y' : Math.random()*500},
+			velocity2d : {'x' : 1, 'y' : 1}
 		}
 		);
 	
@@ -109,7 +110,6 @@ function audioInstanciation()
 function finishedLoading(bufferList) {
 	
 	window.audioBufferList = bufferList;
-	console.log(audioBufferList);
 }
 
 function launchPulse(buffer,player)
@@ -118,15 +118,12 @@ function launchPulse(buffer,player)
 
 	for (var numberof=0;numberof< players.length;numberof++)
 	{
-		console.log(player)
-		console.log(players[numberof].id.number);
 		if (players[numberof].id.number == player-1)
 		{
 			var source = audioContext.createBufferSource();
 			source.buffer = buffer;
 			source.connect(audioContext.destination);
 			source.start(0);
-			console.log(buffer);
 
 
 			Puppets.Entities.createEntity(

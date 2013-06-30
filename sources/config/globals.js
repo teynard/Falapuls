@@ -53,8 +53,7 @@ function createPlayer()
 
 function attack(player, attack)
 {
-	players = Puppets.Entities.getComponents(Puppets.find("fromPlayer player="+player, true))[0];
-	// console.log(player);
+	var players = Puppets.Entities.getComponents(Puppets.find("fromPlayer player=="+player, true))[0];
 	switch (attack)
 	{
 		case 1: 
@@ -67,7 +66,7 @@ function attack(player, attack)
 			attack = players.attackThree;
 		break;
 	}
-	if(attack.count >= attack.coolDown)
+	if(attack.count/60 >= attack.coolDown)
 	{
 		switch (attack.force)
 		{
