@@ -112,21 +112,32 @@ function finishedLoading(bufferList) {
 	console.log(audioBufferList);
 }
 
-function launchPulse(buffer)
+function launchPulse(buffer,player)
 {
-	var source = audioContext.createBufferSource();
-	source.buffer = buffer;
-	source.connect(audioContext.destination);
-	source.start(0);
-	console.log(buffer);
+	var players = Puppets.Entities.getComponents(Puppets.find("life",true))
+
+	for (var numberof=0;numberof< players.length;numberof++)
+	{
+		console.log(player)
+		console.log(players[numberof].id.number);
+		if (players[numberof].id.number == player-1)
+		{
+			var source = audioContext.createBufferSource();
+			source.buffer = buffer;
+			source.connect(audioContext.destination);
+			source.start(0);
+			console.log(buffer);
 
 
-	Puppets.Entities.createEntity(
-		entitiesModels["pulse"], 
-		{ 
-			renderPulse : { "color" : "rgb(255,255,0)", "buffer" : buffer, "compteur" : 0 },
-			position2d  : { "x" : 200, "y" : 200 },
-			size2d      : { "radius" : 3 }
+			Puppets.Entities.createEntity(
+				entitiesModels["pulse"], 
+				{ 
+					renderPulse : { "color" : "rgb(255,255,0)", "buffer" : buffer, "compteur" : 0 },
+					position2d  : { "x" : 200, "y" : 200 },
+					size2d      : { "radius" : 3 }
+				}
+			);
+			
 		}
-	);
+	}
 }
