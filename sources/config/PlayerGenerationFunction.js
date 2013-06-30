@@ -1,14 +1,29 @@
 function playerGeneration(numbOfPlayer)
 {
-	var color = ["hsla(248, 100%, 41%, 1)","hsla(200, 100%, 55%, 1)","hsla(212, 100%, 45%, 1)","hsla(223, 100%, 47%, 1)"];
+	window.addEventListener("keydown", keyDown, true);
+	window.addEventListener("keyup", keyUp, true);
+	
+
+	var color = ["rgb(211,32,39)","rgb(84,237,89)","rgb(0,204,255)","rgb(255,237,0)"];
 	var position2d = [{"x" : 0,"y" : 0},
 					{"x" : canvas.width/2,"y" : 0},
 					{"x" : canvas.width/2,"y" : canvas.height/2},
 					{"x" : 0,"y" : canvas.height/2}];
+	
 	var positionId = ["top-left","top-right","bottom-right","bottom-left"];
+	
 	var numbOfPlayer = numbOfPlayer;
+	
+	if(numbOfPlayer == 2 )
+	PlayersBool = [true,true,false,false];
+	else if (numbOfPlayer == 3)
+		PlayersBool = [true,true,true,false];
+	else if (numbOfPlayer == 4 )
+		PlayersBool = [true,true,true,true];
+	
 	for (var count = 0; count<numbOfPlayer ; count++)
 	{
+		
 		var rectangleId = Puppets.Entities.createEntity(
 		entitiesModels["rectParent"], 
 		{ 

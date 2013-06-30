@@ -35,18 +35,18 @@ var AreaDetection =
 }
 function testDistance(players,distance,player)
 {
-		// console.log(players[player].life.numberof);
+		// console.log(players[player].life);
 	if(distance<=200&& distance>150)
 	{
-		players[player].life.number -=0.001;
+		players[player].life.number -=0.01;
 	}
 	else if(distance<=150 && distance>100)
 	{
-		players[player].life.number -=0.001;
+		players[player].life.number -=0.10;
 	}
 	else if(distance<=100)
 	{
-		players[player].life.number -=0.001;
+		players[player].life.number -=0.3;
 	}
 }
 function sqr(x)

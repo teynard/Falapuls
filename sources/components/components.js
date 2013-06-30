@@ -22,6 +22,8 @@ var componentsModels =
 
     renderShape : "return {color : datas.color || 0, shape : datas.shape || 0};",
 
+    renderOpacity : "return {opacity : datas.opacity || 1};" ,
+
     velocity2d : "return {x : datas.x || 0, y : datas.y || 0};",
 
     childs : "return { number : datas.number || 0 };",
@@ -40,7 +42,9 @@ var componentsModels =
 
     rectParentId : "return {number : datas.number || console.log('rectParentId de '+entity+' est vide') };",
 
-    id : "return {number : datas.number };"
+    id : "return {number : datas.number };",
+
+    idListLife : "return {number :  datas.number || entity };" 
 
 
 

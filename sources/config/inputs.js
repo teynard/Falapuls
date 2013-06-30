@@ -1,16 +1,20 @@
 window.keys = [];
-window.playerKeys = [[49,50,51], [65,90,69], [81, 83, 68], [87, 88, 67]];
-window.addEventListener("keydown", keyDown, true);
-window.addEventListener("keyup", keyUp, true);
+window.playerKeys = [[65,90,69], [73,79,80], [86, 66, 78], [87, 88, 67]];
+
 
 function keyDown(e)
 {
+
 	keys[e.keyCode] = true;
 }
 function keyUp(e)
 {
+	
 	for (var i = 0 ; i < 4 ; i++)
-		spellInput(i, playerKeys[i])
+		{
+			if((PlayersBool[0] && i == 0)||(PlayersBool[1] && i == 1)||(PlayersBool[2] && i == 2)||(PlayersBool[3] && i == 3))
+			spellInput(i, playerKeys[i])
+		}
 
 	delete keys[e.keyCode];
 }

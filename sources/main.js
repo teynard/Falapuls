@@ -21,7 +21,7 @@ function init()
 
 	//Instanciate Puppet context with all the systems we use
 
-	new Puppets(["RenderShape","RenderStroke", "AttackSystem", "AttractorSystem", "Kinematic", "RenderPulse","AreaDetection"]);
+	new Puppets(["RenderShape","RenderStroke","RenderRectParent","lifeDetection", "AttackSystem", "AttractorSystem", "Kinematic", "RenderPulse","AreaDetection"]);
 
 
 	//Instanciate background entity
