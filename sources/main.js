@@ -125,17 +125,15 @@ function launchPulse(buffer,player)
 			source.connect(audioContext.destination);
 			source.start(0);
 			console.log(buffer);
-				console.log(players[numberoff].id.number, player)
-				
-					var position2d_temp = [{"x" : 256, "y" : 192},{"x" : 768, "y" : 192},{"x" : 768, "y" : 576},{"x" : 256, "y" : 576}]
-					Puppets.Entities.createEntity( 
-						entitiesModels["pulse"], 
-						{ 
-							renderPulse : { "color" : "rgb(255,255,0)", "buffer" : buffer, "compteur" : 0 },
-							position2d  : position2d_temp[players[numberoff].id.number],
-							size2d      : { "radius" : 3 }
-						}
-					);
+			var position2d_temp = [{"x" : 256, "y" : 192},{"x" : 768, "y" : 192},{"x" : 768, "y" : 576},{"x" : 256, "y" : 576}]
+			Puppets.Entities.createEntity( 
+				entitiesModels["pulse"], 
+				{ 
+					renderPulse : { "color" : "rgb(255,255,0)", "buffer" : buffer, "compteur" : 0 },
+					position2d  : position2d_temp[players[numberoff].id.number],
+					size2d      : { "radius" : 3 }
+				}
+			);
 					// console.log(position2d_temp)		
 			
 		}
