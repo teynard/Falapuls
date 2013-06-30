@@ -41,7 +41,7 @@ function init()
 		Puppets.Entities.createEntity(
 		entitiesModels["ball"],
 		{
-			renderShape : {"color" : get_random_color()},
+			renderShape : {"color" : "hsla(307, 100%, 40%, 1)"},
 			size2d : {'radius' : RADIUSBALL},
 			position2d : {'x' : Math.random()*700, 'y' : Math.random()*500}
 		}

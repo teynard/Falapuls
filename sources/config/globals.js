@@ -67,7 +67,7 @@ function attack(player, attack)
 			attack = players.attackThree;
 		break;
 	}
-	if(attack.count >= attack.coolDown)
+	if(attack.count/60 >= attack.coolDown)
 	{
 		switch (attack.force)
 		{

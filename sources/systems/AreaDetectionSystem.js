@@ -38,17 +38,14 @@ function testDistance(players,distance,player)
 		// console.log(players[player].life.numberof);
 	if(distance<=200&& distance>150)
 	{
-		console.log(player+"test distance -100!!!!");
 		players[player].life.number -=0.001;
 	}
 	else if(distance<=150 && distance>100)
 	{
-		console.log(player+" test distance -150!!!!");
 		players[player].life.number -=0.001;
 	}
 	else if(distance<=100)
 	{
-		console.log(player+" test distance  -100!!!!");
 		players[player].life.number -=0.001;
 	}
 }

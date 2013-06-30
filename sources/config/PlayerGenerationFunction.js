@@ -1,6 +1,6 @@
 function playerGeneration(numbOfPlayer)
 {
-	var color = ["#00FF00","#00BB00","#009900","#006600"];
+	var color = ["hsla(248, 100%, 41%, 1)","hsla(200, 100%, 55%, 1)","hsla(212, 100%, 45%, 1)","hsla(223, 100%, 47%, 1)"];
 	var position2d = [{"x" : 0,"y" : 0},
 					{"x" : canvas.width/2,"y" : 0},
 					{"x" : canvas.width/2,"y" : canvas.height/2},
