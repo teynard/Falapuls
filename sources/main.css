@@ -31,7 +31,7 @@ canvas {
 	bottom: 0;
 	margin: auto;
 	display: inline;
-	background-image: url(../medias/images/menu_background.png);
+	background-image: url(../medias/images/menu_background.jpg);
 }
 
 #title {
@@ -139,7 +139,7 @@ canvas {
 #tutorial {
 	position: absolute;
 	width: 700px;
-	height: 210px;
+	height: 206px;
 	background-image: url(../medias/images/clavier.png);
 	background-size: 700px;
 	background-repeat: no-repeat;
@@ -150,10 +150,18 @@ canvas {
 	color: white;
 	display: none;
 }
+#tutorial:hover
+{
+	background-image: url(../medias/images/clavierHover.png);
+}
 #manette{
 	position: absolute;
+	width: 323px;
+	height: 229px;
 	margin-left: 10px;
 	margin-top: 504px;
+	background-image: url(../medias/images/manette.png);
+	background-size: 100%;
 	display: none;
 }
 #credits {
@@ -165,6 +173,10 @@ canvas {
 	color: white;
 	text-align:right;
 	display: none;
+}
+#manette:hover
+{
+	background-image: url(../medias/images/manetteHover.png);
 }
 /*.playerText{
 	text-align: center;
